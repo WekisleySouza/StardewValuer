@@ -25,6 +25,7 @@ items = [
     {'name': 'pinha', 'price1': 5, 'price2': 5, 'price3': 5, 'price4': 5},
     {'name': 'rosa_fada', 'price1': 290, 'price2': 362, 'price3': 435, 'price4': 580},
     {'name': 'seiva', 'price1': 2, 'price2': 2, 'price3': 2, 'price4': 2},
+    {'name': 'ervilha_cheiro', 'price1': 50, 'price2': 62, 'price3': 75, 'price4': 100},
     {'name': 'semente_abobora', 'price1': 50, 'price2': 50, 'price3': 50, 'price4': 50},
     {'name': 'semente_acer', 'price1': 5, 'price2': 5, 'price3': 5, 'price4': 5},
     {'name': 'semente_couve_flor', 'price1': 40, 'price2': 40, 'price3': 40, 'price4': 40},
@@ -38,6 +39,17 @@ items = [
     {'name': 'ovo_branco', 'price1': 50, 'price2': 62, 'price3': 75, 'price4': 100},
     {'name': 'ovo_branco_grande', 'price1': 95, 'price2': 118, 'price3': 142, 'price4': 190},
     {'name': 'ovo_marrom_grande', 'price1': 95, 'price2': 118, 'price3': 142, 'price4': 190},
+    {'name': 'trufa', 'price1': 625, 'price2': 781, 'price3': 937, 'price4': 1250},
+    {'name': 'tecido', 'price1': 470, 'price2': 470, 'price3': 470, 'price4': 470},
+    {'name': 'pena_pato', 'price1': 250, 'price2': 312, 'price3': 375, 'price4': 500},
+    {'name': 'oleo_trufa', 'price1': 1065, 'price2': 1065, 'price3': 1065, 'price4': 1065},
+    {'name': 'mel_selvagem', 'price1': 100, 'price2': 100, 'price3': 100, 'price4': 100},
+    {'name': 'alcatrao_pinho', 'price1': 100, 'price2': 100, 'price3': 100, 'price4': 100},
+    {'name': 'carvao', 'price1': 15, 'price2': 15, 'price3': 15, 'price4': 15},
+    {'name': 'minerio_iridio', 'price1': 100, 'price2': 100, 'price3': 100, 'price4': 100},
+    {'name': 'minerio_ferro', 'price1': 10, 'price2': 10, 'price3': 10, 'price4': 10},
+    {'name': 'minerio_ouro', 'price1': 25, 'price2': 25, 'price3': 25, 'price4': 25},
+    {'name': 'quartzo', 'price1': 25, 'price2': 25, 'price3': 25, 'price4': 25},
 ]
 
 numbers = [

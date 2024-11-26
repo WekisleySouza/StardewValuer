@@ -11,7 +11,7 @@ def print_item_info(name, max_val, max_loc):
         print(f"Posição da correspondência de: {max_loc}")
 
 def run_match_template():
-    inventory_image, gray_inventory_image = get_inventory_image('in3')
+    inventory_image, gray_inventory_image = get_inventory_image('in5')
     found_items = []
 
     for item in items:

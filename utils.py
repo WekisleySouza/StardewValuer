@@ -37,33 +37,11 @@ def print_result_on_image(image, text):
     text_x = width - text_size[0] - 10
     text_y = 30
     cv2.putText(image, str(text), (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
-    
-def match_with_orb(image1, image2):
-    # Inicializa o detector ORB
-    orb = cv2.ORB_create()
-    kp1, des1 = orb.detectAndCompute(image1, None)
-    kp2, des2 = orb.detectAndCompute(image2, None)
 
-    # Verifica se os descritores foram gerados
-    if des1 is None or des2 is None:
-        print("Nenhum descritor encontrado em uma das imagens.")
-        return [], kp1, kp2  # Retorna correspondências vazias
-
-    # Matcher de descritores (Hamming distance)
-    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-    matches = bf.match(des1, des2)
-
-    # Ordena as correspondências pelo menor erro (distância)
-    matches = sorted(matches, key=lambda x: x.distance)
-    return matches, kp1, kp2
-
-
-def testar():
-    img = get_item_image('morel')
-    print(img.shape)
-    cv2.imshow('Resultado do Template Matching', img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
-if __name__ == '__main__':
-    testar()
+def is_in_list(coord, list):
+    interval = 10
+    for item in list:
+        x, y = item['top_left']
+        if x < coord[0] + interval and x > coord[0] - interval and y < coord[1] + interval and y > coord[1] - interval:
+            return True
+    return False

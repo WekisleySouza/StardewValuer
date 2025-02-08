@@ -1,7 +1,8 @@
-import cv2
-import numpy as np
-from utils import *
-from data import items
-from solutions import *
+from classes.StardewValuer import StardewValuer
+from data.data import items
+from data.data import stars
 
-run_match_template()
+inventory = StardewValuer('./inventories/in3.png')
+inventory.find_items(items)
+# inventory.detect_stars(stars)
+inventory.display_results()

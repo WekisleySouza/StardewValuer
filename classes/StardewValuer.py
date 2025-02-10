@@ -1,5 +1,6 @@
 from classes.ImageProcessor import ImageProcessor
 from classes.ItemFinder import ItemFinder
+from classes.NumberFinder import NumberFinder
 from classes.Item import Item
 
 import cv2
@@ -26,11 +27,20 @@ class StardewValuer:
     
     def find_stars(self, colors):
         for item in self.detected_items:
-            item_image = ImageProcessor.crop_image(self.inventory_image, item.star_top_left_position, item.star_bottom_right_position)
-            item.star = ImageProcessor.detect_dominant_color(item_image, colors)
+            item_star_image = ImageProcessor.crop_image(self.inventory_image, item.star_top_left_position, item.star_bottom_right_position)
+            item.star = ImageProcessor.detect_dominant_color(item_star_image, colors)
     
-    def find_numbers(self, numbers):
-        ...
+    def find_numbers(self):
+        for item in self.detected_items:
+            item_number_image = ImageProcessor.crop_image(self.inventory_gray, item.number_top_left_position, item.number_bottom_right_position)
+
+            matches = []
+            for num in range(0, 10):
+                matches.extend(NumberFinder.find_matches(item_number_image, num))
+            
+            item.quantity = NumberFinder.extract_number(matches)
+            print(f"Number of {item.name}: {item.quantity}")
+                    
 
     def calculate_total_value(self):
         return sum(item.price for item in self.detected_items)
@@ -40,12 +50,17 @@ class StardewValuer:
             ImageProcessor.draw_rectangle(
                 self.inventory_image, item.position, item.bottom_right_position, item.star_color
             )
-            ImageProcessor.draw_rectangle(
-                self.inventory_image, item.star_top_left_position, item.star_bottom_right_position,
-                color=(255, 255, 0)
-            )
             # ImageProcessor.draw_rectangle(
-            #     self.inventory_image, item.number_top_left_position, item.number_bottom_right_position,
+            #     self.inventory_image, item.star_top_left_position, item.star_bottom_right_position,
+            #     color=(255, 255, 0)
+            # )
+            ImageProcessor.draw_rectangle(
+                self.inventory_image, item.number_top_left_position, item.number_bottom_right_position,
+                color=(0, 255, 0)
+            )
+
+            # ImageProcessor.draw_rectangle(
+            #     self.inventory_image, (5, 5), (15, 15),
             #     color=(0, 255, 0)
             # )
         ImageProcessor.draw_text(self.inventory_image, f'${self.calculate_total_value()}', (10, 30))

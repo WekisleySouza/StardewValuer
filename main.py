@@ -7,7 +7,8 @@ colors = {
     'iridium': ([120, 50, 50], [160, 255, 255])
 }
 
-inventory = StardewValuer('./inventories/in3.png')
+inventory = StardewValuer('./inventories/in5.png')
 inventory.find_items(items)
 inventory.find_stars(colors)
+inventory.find_numbers()
 inventory.display_results()

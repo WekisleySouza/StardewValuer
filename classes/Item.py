@@ -5,6 +5,7 @@ class Item:
         self.__price2 = item_data['price2']
         self.__price3 = item_data['price3']
         self.__price4 = item_data['price4']
+        self.__quantity = 1
         self.__position = position
         self.__star = None
 
@@ -26,7 +27,14 @@ class Item:
             return self.__price1 * 2
         elif self.__star == 'unknown':
             return self.__price1
-        
+    
+    @property
+    def quantity(self):
+        return self.__quantity
+    
+    @quantity.setter
+    def quantity(self, value: int):
+        self.__quantity = value
     
     @property
     def position(self):
@@ -65,11 +73,11 @@ class Item:
     
     @property
     def number_top_left_position(self):
-        return (self.__position[0] + 30, self.__position[1] + 45)
+        return (self.__position[0] + 20, self.__position[1] + 40)
     
     @property
     def number_bottom_right_position(self):
-        return (self.__position[0] + 70, self.__position[1] + 70)
+        return (self.__position[0] + 70, self.__position[1] + 75)
     
     def is_equal_to(self, other):
         tolerance = 10

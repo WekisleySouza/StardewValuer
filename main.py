@@ -1,6 +1,5 @@
 from classes.StardewValuer import StardewValuer
 from data.data import items
-from data.data import stars
 
 colors = {
     'silver': ([0, 0, 180], [180, 30, 255]),

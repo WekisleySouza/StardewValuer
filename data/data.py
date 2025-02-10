@@ -51,13 +51,3 @@ items = [
     {'name': 'minerio_ouro', 'price1': 25, 'price2': 25, 'price3': 25, 'price4': 25},
     {'name': 'quartzo', 'price1': 25, 'price2': 25, 'price3': 25, 'price4': 25},
 ]
-
-numbers = [
-
-]
-
-stars = [
-        {'name': "gray_star", 'multiplier': 1.25},
-        {'name': "gold_star", 'multiplier': 1.5},
-        {'name': "iridium_star", 'multiplier': 2},
-]

@@ -57,11 +57,11 @@ class Item:
     
     @property
     def star_top_left_position(self):
-        return (self.__position[0]+3, self.__position[1] + 55)
+        return (self.__position[0]+5, self.__position[1] + 50)
     
     @property
     def star_bottom_right_position(self):
-        return (self.__position[0] + 13, self.__position[1] + 65)
+        return (self.__position[0] + 15, self.__position[1] + 60)
     
     @property
     def number_top_left_position(self):

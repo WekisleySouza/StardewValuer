@@ -37,9 +37,9 @@ class StardewValuer:
     
     def display_results(self):
         for item in self.detected_items:
-            # ImageProcessor.draw_rectangle(
-            #     self.inventory_image, item.position, item.bottom_right_position, item.star_color
-            # )
+            ImageProcessor.draw_rectangle(
+                self.inventory_image, item.position, item.bottom_right_position, item.star_color
+            )
             ImageProcessor.draw_rectangle(
                 self.inventory_image, item.star_top_left_position, item.star_bottom_right_position,
                 color=(255, 255, 0)

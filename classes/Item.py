@@ -20,13 +20,13 @@ class Item:
     @property
     def price(self):
         if self.__star == 'silver':
-            return self.__price1 * 1.25
+            return self.__price1 * 1.25 * self.__quantity
         elif self.__star == 'gold':
-            return self.__price1 * 1.5
+            return self.__price1 * 1.5 * self.__quantity
         elif self.__star == 'iridium':
-            return self.__price1 * 2
+            return self.__price1 * 2 * self.__quantity
         elif self.__star == 'unknown':
-            return self.__price1
+            return self.__price1 * self.__quantity
     
     @property
     def quantity(self):
